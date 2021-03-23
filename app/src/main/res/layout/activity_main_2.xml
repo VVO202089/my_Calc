@@ -38,7 +38,8 @@
             android:layout_columnWeight="1"
             android:insetRight="6dp"
             android:text="@string/c"
-            android:textSize="@dimen/textSize"/>
+            android:textSize="@dimen/textSize"
+            android:onClick="button1_click"/>
 
         <Button
             android:id="@+id/button2"
@@ -48,7 +49,8 @@
             android:layout_column="1"
             android:insetRight="6dp"
             android:text="@string/parentheses"
-            android:textSize="@dimen/textSize"/>
+            android:textSize="@dimen/textSize"
+            android:onClick="button2_click"/>
 
         <Button
             android:id="@+id/button3"
@@ -56,7 +58,8 @@
             android:layout_height="wrap_content"
             android:insetRight="6dp"
             android:text="@string/percent"
-            android:textSize="@dimen/textSize"/>
+            android:textSize="@dimen/textSize"
+            android:onClick="button3_click"/>
 
         <Button
             android:id="@+id/button4"
@@ -64,7 +67,8 @@
             android:layout_height="wrap_content"
             android:insetRight="6dp"
             android:text="@string/div"
-            android:textSize="@dimen/textSize"/>
+            android:textSize="@dimen/textSize"
+            android:onClick="button4_click"/>
 
         <Button
             android:id="@+id/button5"
@@ -73,7 +77,8 @@
             android:layout_columnWeight="1"
             android:insetRight="6dp"
             android:text="@string/_7"
-            android:textSize="@dimen/textSize"/>
+            android:textSize="@dimen/textSize"
+            android:onClick="button5_click"/>
 
         <Button
             android:id="@+id/button6"
@@ -81,7 +86,8 @@
             android:layout_height="wrap_content"
             android:insetRight="6dp"
             android:text="@string/_8"
-            android:textSize="@dimen/textSize"/>
+            android:textSize="@dimen/textSize"
+            android:onClick="button6_click"/>
 
         <Button
             android:id="@+id/button7"
@@ -89,7 +95,8 @@
             android:layout_height="wrap_content"
             android:insetRight="6dp"
             android:text="@string/_9"
-            android:textSize="@dimen/textSize"/>
+            android:textSize="@dimen/textSize"
+            android:onClick="button7_click"/>
 
         <Button
             android:id="@+id/button8"
@@ -97,7 +104,8 @@
             android:layout_height="wrap_content"
             android:insetRight="6dp"
             android:text="@string/multi"
-            android:textSize="@dimen/textSize"/>
+            android:textSize="@dimen/textSize"
+            android:onClick="button8_click"/>
 
         <Button
             android:id="@+id/button9"
@@ -106,7 +114,8 @@
             android:layout_columnWeight="1"
             android:insetRight="6dp"
             android:text="@string/_4"
-            android:textSize="@dimen/textSize"/>
+            android:textSize="@dimen/textSize"
+            android:onClick="button9_click"/>
 
         <Button
             android:id="@+id/button10"
@@ -114,7 +123,8 @@
             android:layout_height="wrap_content"
             android:insetRight="6dp"
             android:text="@string/_5"
-            android:textSize="@dimen/textSize"/>
+            android:textSize="@dimen/textSize"
+            android:onClick="button10_click"/>
 
         <Button
             android:id="@+id/button11"
@@ -122,7 +132,8 @@
             android:layout_height="wrap_content"
             android:insetRight="6dp"
             android:text="@string/_6"
-            android:textSize="@dimen/textSize"/>
+            android:textSize="@dimen/textSize"
+            android:onClick="button11_click"/>
 
         <Button
             android:id="@+id/button12"
@@ -130,7 +141,8 @@
             android:layout_height="wrap_content"
             android:insetRight="6dp"
             android:text="@string/subst"
-            android:textSize="@dimen/textSize"/>
+            android:textSize="@dimen/textSize"
+            android:onClick="button12_click"/>
 
         <Button
             android:id="@+id/button13"
@@ -139,7 +151,8 @@
             android:layout_columnWeight="1"
             android:insetRight="6dp"
             android:text="@string/_1"
-            android:textSize="@dimen/textSize"/>
+            android:textSize="@dimen/textSize"
+            android:onClick="button13_click"/>
 
         <Button
             android:id="@+id/button14"
@@ -147,7 +160,8 @@
             android:layout_height="wrap_content"
             android:insetRight="6dp"
             android:text="@string/_2"
-            android:textSize="@dimen/textSize"/>
+            android:textSize="@dimen/textSize"
+            android:onClick="button14_click"/>
 
         <Button
             android:id="@+id/button15"
@@ -155,7 +169,8 @@
             android:layout_height="wrap_content"
             android:insetRight="6dp"
             android:text="@string/_3"
-            android:textSize="@dimen/textSize"/>
+            android:textSize="@dimen/textSize"
+            android:onClick="button15_click"/>
 
         <Button
             android:id="@+id/button16"
@@ -163,7 +178,8 @@
             android:layout_height="wrap_content"
             android:insetRight="6dp"
             android:text="@string/add"
-            android:textSize="@dimen/textSize"/>
+            android:textSize="@dimen/textSize"
+            android:onClick="button16_click"/>
 
         <Button
             android:id="@+id/button17"
@@ -172,7 +188,8 @@
             android:layout_columnWeight="1"
             android:insetRight="6dp"
             android:text="@string/sign"
-            android:textSize="@dimen/textSize"/>
+            android:textSize="@dimen/textSize"
+            android:onClick="button17_click"/>
 
         <Button
             android:id="@+id/button18"
@@ -180,7 +197,8 @@
             android:layout_height="wrap_content"
             android:insetRight="6dp"
             android:text="@string/_0"
-            android:textSize="@dimen/textSize"/>
+            android:textSize="@dimen/textSize"
+            android:onClick="button18_click"/>
 
         <Button
             android:id="@+id/button19"
@@ -188,7 +206,8 @@
             android:layout_height="wrap_content"
             android:insetRight="6dp"
             android:text="@string/separator"
-            android:textSize="@dimen/textSize"/>
+            android:textSize="@dimen/textSize"
+            android:onClick="button19_click"/>
 
         <Button
             android:id="@+id/button20"
@@ -196,7 +215,8 @@
             android:layout_height="wrap_content"
             android:insetRight="6dp"
             android:text="@string/equally"
-            android:textSize="@dimen/textSize"/>
+            android:textSize="@dimen/textSize"
+            android:onClick="button20_click"/>
 
     </GridLayout>
 
