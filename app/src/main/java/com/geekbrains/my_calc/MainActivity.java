@@ -1,14 +1,16 @@
 package com.geekbrains.my_calc;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private final static String key = "MainActivity";
 
     private Button button1;
     private Button button2;
@@ -32,10 +34,24 @@ public class MainActivity extends AppCompatActivity {
     private Button button20;
     private EditText rez;
 
+    // сохранение данных
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        //outState.putSerializable(key,this);
+    }
+
+    // восстановление данных
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        initView();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_2);
+        setContentView(R.layout.activity_main_2_vertical);
         initView();
     }
 
@@ -60,7 +76,9 @@ public class MainActivity extends AppCompatActivity {
         button18 = findViewById(R.id.button18);
         button19 = findViewById(R.id.button19);
         button20 = findViewById(R.id.button20);
-        rez      = findViewById(R.id.editTextTextMultiLine2);
+        rez = findViewById(R.id.editTextTextMultiLine2);
+        // изначально устанавиваем пустую строку
+        rez.setText("");
         initButtonClick();
     }
 
@@ -69,143 +87,152 @@ public class MainActivity extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String rezult = String.valueOf(rez.getText()).concat(String.valueOf(button1.getText()));
-                rez.setText(rezult);
+                setOnClickButton(button1);
             }
         });
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String rezult = String.valueOf(rez.getText()).concat(String.valueOf(button2.getText()));
-                rez.setText(rezult);
+                setOnClickButton(button2);
             }
         });
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String rezult = String.valueOf(rez.getText()).concat(String.valueOf(button3.getText()));
-                rez.setText(rezult);
+                setOnClickButton(button3);
             }
         });
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String rezult = String.valueOf(rez.getText()).concat(String.valueOf(button4.getText()));
-                rez.setText(rezult);
+                setOnClickButton(button4);
             }
         });
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String rezult = String.valueOf(rez.getText()).concat(String.valueOf(button5.getText()));
-                rez.setText(rezult);
+                setOnClickButton(button5);
             }
         });
         button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String rezult = String.valueOf(rez.getText()).concat(String.valueOf(button6.getText()));
-                rez.setText(rezult);
+                setOnClickButton(button6);
             }
         });
         button7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String rezult = String.valueOf(rez.getText()).concat(String.valueOf(button7.getText()));
-                rez.setText(rezult);
+                setOnClickButton(button7);
             }
         });
         button8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String rezult = String.valueOf(rez.getText()).concat(String.valueOf(button8.getText()));
-                rez.setText(rezult);
+                setOnClickButton(button8);
             }
         });
         button9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String rezult = String.valueOf(rez.getText()).concat(String.valueOf(button9.getText()));
-                rez.setText(rezult);
+                setOnClickButton(button9);
             }
         });
         button10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String rezult = String.valueOf(rez.getText()).concat(String.valueOf(button10.getText()));
-                rez.setText(rezult);
+                setOnClickButton(button10);
             }
         });
         button11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String rezult = String.valueOf(rez.getText()).concat(String.valueOf(button11.getText()));
-                rez.setText(rezult);
+                setOnClickButton(button11);
             }
         });
         button12.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String rezult = String.valueOf(rez.getText()).concat(String.valueOf(button12.getText()));
-                rez.setText(rezult);
+                setOnClickButton(button12);
             }
         });
         button13.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String rezult = String.valueOf(rez.getText()).concat(String.valueOf(button13.getText()));
-                rez.setText(rezult);
+                setOnClickButton(button13);
             }
         });
         button14.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String rezult = String.valueOf(rez.getText()).concat(String.valueOf(button14.getText()));
-                rez.setText(rezult);
+                setOnClickButton(button14);
             }
         });
         button15.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String rezult = String.valueOf(rez.getText()).concat(String.valueOf(button15.getText()));
-                rez.setText(rezult);
+                setOnClickButton(button15);
             }
         });
         button16.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String rezult = String.valueOf(rez.getText()).concat(String.valueOf(button16.getText()));
-                rez.setText(rezult);
+                setOnClickButton(button16);
             }
         });
         button17.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String rezult = String.valueOf(rez.getText()).concat(String.valueOf(button17.getText()));
-                rez.setText(rezult);
+                setOnClickButton(button17);
             }
         });
         button18.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String rezult = String.valueOf(rez.getText()).concat(String.valueOf(button18.getText()));
-                rez.setText(rezult);
+                setOnClickButton(button18);
             }
         });
         button19.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String rezult = String.valueOf(rez.getText()).concat(String.valueOf(button19.getText()));
-                rez.setText(rezult);
+                setOnClickButton(button19);
             }
         });
         button20.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String rezult = String.valueOf(rez.getText()).concat(String.valueOf(button20.getText()));
-                rez.setText(rezult);
+                setOnClickButton(button20);
             }
         });
     }
-    
+
+    private void setOnClickButton(Button button) {
+
+        String buttonText = String.valueOf(button.getText());
+        String rezText = String.valueOf(rez.getText());
+
+        String result = null;
+
+        if (buttonText.equals("C")) {
+            rez.setText("");
+        } else if (buttonText.equals("+/-")) {
+
+            if (String.valueOf(rez.getText()).length() == 1) {
+                result = "-".concat(String.valueOf(rez.getText()));
+            } else if (String.valueOf(rez.getText()).length() == 2) {
+                result = (rezText.equals("-")) ? String.valueOf(rez.getText()).replace('-', ' ') : "-".concat(String.valueOf(rez.getText()));
+            }
+        } else if (buttonText.equals("=")) {
+            // тут нужно выполнить расчет
+        } else {
+            result = String.valueOf(rez.getText()).concat(buttonText);
+        }
+
+        rez.setText(result);
+    }
+
+    @Override
+    public void onClick(View v) {
+
+    }
 }
