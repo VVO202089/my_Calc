@@ -16,19 +16,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <RadioButton
+        <com.google.android.material.radiobutton.MaterialRadioButton
             android:id="@+id/changeDarkTheme"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Темная тема"
             tools:ignore="MissingConstraints" />
 
-        <RadioButton
+        <com.google.android.material.radiobutton.MaterialRadioButton
             android:id="@+id/changeLightTheme"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Светлая тема"
-            tools:ignore="MissingConstraints"></RadioButton>
+            tools:ignore="MissingConstraints"></com.google.android.material.radiobutton.MaterialRadioButton>
     </RadioGroup>
 
     <EditText

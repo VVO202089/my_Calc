@@ -9,8 +9,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+import com.google.android.material.radiobutton.MaterialRadioButton;
+
+public class MainActivity extends AppCompatActivity {
 
     private final static String RezKey = "RezKey";
     private final static String appTheme = "APP_THEME";
@@ -36,8 +39,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button button19;
     private Button button20;
     private EditText rez;
-    private RadioButton changeDarkTheme;
-    private RadioButton changeLightTheme;
+    private RadioGroup rg;
+    private MaterialRadioButton changeDarkTheme;
+    private MaterialRadioButton changeLightTheme;
     protected static final int AppThemeLightStyle = 0;
     protected static final int AppThemeDarkStyle = 1;
 
@@ -58,9 +62,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_2_vertical);
         // изначально светлая тема
-        setTheme(getAppTheme(AppThemeLightStyle));
+        setTheme(getAppTheme(R.style.MyStyle));
+        setContentView(R.layout.activity_main_2_vertical);
         initView();
     }
 
@@ -107,6 +111,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // изначально устанавиваем пустую строку
         rez.setText("");
         // определим радио кнопки
+        rg = findViewById(R.id.radioGroup);
         changeDarkTheme = findViewById(R.id.changeDarkTheme);
         changeLightTheme = findViewById(R.id.changeLightTheme);
         initButtonClick();
@@ -120,7 +125,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onClick(View v) {
                 boolean checked = ((RadioButton) v).isChecked();
                 if (checked) {
-                    setAppTheme(0);
+                    setAppTheme(AppThemeLightStyle);
                     recreate();
                 }
             }
@@ -131,11 +136,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onClick(View v) {
                 boolean checked = ((RadioButton) v).isChecked();
                 if (checked) {
-                    setAppTheme(1);
+                    setAppTheme(AppThemeDarkStyle);
                     recreate();
                 }
             }
         });
+
+        ((MaterialRadioButton)rg.getChildAt(getCodeStyle(AppThemeLightStyle))).setChecked(true);
 
     }
 
@@ -295,8 +302,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         rez.setText(result);
     }
 
-    @Override
-    public void onClick(View v) {
-
-    }
 }
