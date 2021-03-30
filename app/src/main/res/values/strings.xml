@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AndroidLevel1</string>
+    <string name="app_name">My Calculator</string>
     <string name="MyResource">Моя кнопка</string>
     <string name="_1">1</string>
     <string name="_2">2</string>
