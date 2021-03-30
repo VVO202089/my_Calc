@@ -3,14 +3,17 @@ package com.geekbrains.my_calc;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private final static String key = "MainActivity";
+    private final static String RezKey = "RezKey";
+    private final static String appTheme = "APP_THEME";
 
     private Button button1;
     private Button button2;
@@ -33,26 +36,50 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button button19;
     private Button button20;
     private EditText rez;
+    private RadioButton changeDarkTheme;
+    private RadioButton changeLightTheme;
+    protected static final int AppThemeLightStyle = 0;
+    protected static final int AppThemeDarkStyle = 1;
 
     // сохранение данных
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
+        outState.putString(RezKey, String.valueOf(rez.getText())); // сохраняем значение результата при смене ориентации
         super.onSaveInstanceState(outState);
-        //outState.putSerializable(key,this);
     }
 
     // восстановление данных
     @Override
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        initView();
+        rez.setText(savedInstanceState.getString(RezKey)); // получаем значение результата
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_2_vertical);
+        // изначально светлая тема
+        setTheme(getAppTheme(AppThemeLightStyle));
         initView();
+    }
+
+    private int getAppTheme(int codeStyle) {
+        return codeStyleToStyleID(getCodeStyle(codeStyle));
+    }
+
+    private int codeStyleToStyleID(int codeStyle) {
+        switch (codeStyle) {
+            case AppThemeDarkStyle:
+                return R.style.MyStyleDark;
+            default:
+                return R.style.MyStyle;
+        }
+    }
+
+    protected int getCodeStyle(int codeStyle) {
+        SharedPreferences sharedPreferences = getSharedPreferences(appTheme, MODE_PRIVATE);
+        return sharedPreferences.getInt(appTheme, codeStyle);
     }
 
     private void initView() {
@@ -79,7 +106,45 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         rez = findViewById(R.id.editTextTextMultiLine2);
         // изначально устанавиваем пустую строку
         rez.setText("");
+        // определим радио кнопки
+        changeDarkTheme = findViewById(R.id.changeDarkTheme);
+        changeLightTheme = findViewById(R.id.changeLightTheme);
         initButtonClick();
+        initThemeChooser();
+    }
+
+    private void initThemeChooser() {
+
+        changeLightTheme.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean checked = ((RadioButton) v).isChecked();
+                if (checked) {
+                    setAppTheme(0);
+                    recreate();
+                }
+            }
+        });
+
+        changeDarkTheme.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean checked = ((RadioButton) v).isChecked();
+                if (checked) {
+                    setAppTheme(1);
+                    recreate();
+                }
+            }
+        });
+
+    }
+
+    private void setAppTheme(int i) {
+        SharedPreferences sharedPreferences = getSharedPreferences(RezKey, MODE_PRIVATE);
+        // сохраняем настройки через Editor
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt(appTheme, i);
+        editor.apply();
     }
 
     private void initButtonClick() {
@@ -216,7 +281,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (buttonText.equals("C")) {
             rez.setText("");
         } else if (buttonText.equals("+/-")) {
-
             if (String.valueOf(rez.getText()).length() == 1) {
                 result = "-".concat(String.valueOf(rez.getText()));
             } else if (String.valueOf(rez.getText()).length() == 2) {
