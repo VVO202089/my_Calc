@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+<style name="MyStyle">
+<item name="android:textSize">@dimen/textSize</item>
+<item name="android:background">@color/design_default_color_secondary</item>
+    <item name="android:textStyle">italic</item>
+</style>
+    <style name="MyStyleDark" parent="ThemeOverlay.MaterialComponents.Dark"></style>
+    
+</resources>
