@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.My_Calc">
-        <activity android:name=".MainActivity">
+        <activity android:name=".ActivityCalc"></activity>
+        <activity android:name=".MainActivitySetting">
+            android:configChanges="orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
