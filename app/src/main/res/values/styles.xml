@@ -3,7 +3,7 @@
 
 <style name="MyStyle">
 <item name="android:textSize">@dimen/textSize</item>
-<item name="android:background">@color/design_default_color_secondary</item>
+<item name="android:background">@color/white</item>
     <item name="android:textStyle">italic</item>
 </style>
     <style name="MyStyleDark">

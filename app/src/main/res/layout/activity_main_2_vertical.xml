@@ -4,49 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/lesson2_main"
     android:theme="@style/MyStyle">
-
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextMultiLine2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <com.google.android.material.radiobutton.MaterialRadioButton
-            android:id="@+id/changeDarkTheme"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Темная тема"
-            tools:ignore="MissingConstraints" />
-
-        <com.google.android.material.radiobutton.MaterialRadioButton
-            android:id="@+id/changeLightTheme"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Светлая тема"
-            tools:ignore="MissingConstraints"></com.google.android.material.radiobutton.MaterialRadioButton>
-    </RadioGroup>
 
     <EditText
         android:id="@+id/editTextTextMultiLine2"
         android:layout_width="@dimen/EditTextWidth"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/marginBottom"
-        android:background="@color/design_default_color_surface"
         android:gravity="start|top"
         android:inputType="textMultiLine"
         android:minLines="5"
         android:textSize="@dimen/textSize"
+        android:imeOptions="actionGo"
         app:layout_constraintBottom_toTopOf="@+id/gridLayout"
         app:layout_constraintEnd_toEndOf="@+id/gridLayout"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/gridLayout"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread">
+        <requestFocus />
+    </EditText>
 
     <GridLayout
         android:id="@+id/gridLayout"
@@ -54,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:columnCount="4"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/goSettings"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -354,4 +330,15 @@
             app:layout_constraintVertical_chainStyle="packed" />
 
     </GridLayout>
+
+    <Button
+        android:id="@+id/goSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="в настройки"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
 </androidx.constraintlayout.widget.ConstraintLayout>

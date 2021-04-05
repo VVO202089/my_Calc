@@ -4,54 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/lesson2_main"
-    android:theme="@style/MyStyle"
-    android:layout_gravity="fill_horizontal">
+    android:layout_gravity="fill_horizontal"
+    android:theme="@style/MyStyle">
 
-    <RadioButton
-        android:id="@+id/changeDarkTheme"
+    <Button
+        android:id="@+id/goSettings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Темная тема"
-        app:layout_constraintBottom_toTopOf="@+id/changeLightTheme"
-        app:layout_constraintStart_toStartOf="@+id/changeLightTheme"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <RadioButton
-        android:id="@+id/changeLightTheme"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Светлая тема"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextMultiLine2"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextMultiLine2"
-        app:layout_constraintTop_toBottomOf="@+id/changeDarkTheme"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/editTextTextMultiLine2"
-        android:layout_width="@dimen/EditTextWidth"
-        android:layout_height="wrap_content"
-        android:background="@color/design_default_color_surface"
-        android:importantForAutofill="no"
-        android:inputType="textMultiLine"
-        android:minLines="10"
+        android:text="в настройки"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/gridLayout"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/gridLayout"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
 
     <GridLayout
         android:id="@+id/gridLayout"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:columnCount="4"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextMultiLine2"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintBottom_toTopOf="@+id/goSettings"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
@@ -143,15 +115,15 @@
             app:layout_constraintVertical_chainStyle="packed" />
 
         @dimen/insertRight"
-            android:text="@string/_9"
-            android:textSize="@dimen/textSize"
-            app:layout_constraintBottom_toTopOf="@+id/button11"
-            app:layout_constraintEnd_toStartOf="@+id/button8"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.5"
-            app:layout_constraintVertical_chainStyle="packed" />
+        android:text="@string/_9"
+        android:textSize="@dimen/textSize"
+        app:layout_constraintBottom_toTopOf="@+id/button11"
+        app:layout_constraintEnd_toStartOf="@+id/button8"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintVertical_chainStyle="packed" />
 
         ]>
 
@@ -364,4 +336,22 @@
             app:layout_constraintVertical_chainStyle="packed" />
 
     </GridLayout>
+
+    <EditText
+        android:id="@+id/editTextTextMultiLine2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/design_default_color_surface"
+        android:imeOptions="flagNoExtractUi"
+        android:importantForAutofill="no"
+        android:inputType="textMultiLine"
+        android:minLines="10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/gridLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
